@@ -10,6 +10,12 @@ import {
 import { countries } from '../../../assets/JsonDataFiles/countries';
 import { AbstractControl, ControlContainer, FormControl } from '@angular/forms';
 
+interface country {  
+  table: string,
+  id: string,
+  name: string,
+  english_name: string
+}  
 @Component({
   selector: 'app-form-drop-down',
   templateUrl: './form-drop-down.component.html',
@@ -24,7 +30,9 @@ export class FormDropDownComponent implements OnInit {
   public isCountriesDic = '';
   public isWorkStatusDic='';
   public isBanksDic='';
-
+  ListUnits:country[]=countries;
+  listOfData:Array<any>=["1","2","3"];
+  
   public countriesList = new Map(
     countries.map((object) => {
       return [object.name, object.name];
@@ -54,6 +62,7 @@ export class FormDropDownComponent implements OnInit {
   @Input() control!: FormControl;
 
   setForm(value: any) {
+    
     if (value == true || value == false) {
       this.formBooleanValue = value;
       this.formBooleanValueChange.emit(this.formBooleanValue);

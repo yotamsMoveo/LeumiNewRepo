@@ -2,13 +2,13 @@
   <label *ngIf="labelText" class="form-label">{{ labelText }}</label>
   <form appearance="fill" class="form-dropp-dwon" for="control">
     <div *ngIf="isFamilyStatusDic">
-      <mat-select>
+      <select  class="form-dropp-dwon"  name="cars" id="cars">
         <div *ngFor="let item of FSDic | keyvalue">
-          <mat-option value="item.value" (click)="setForm(item.value)">{{
+          <option value="item.value" (click)="setForm(item.value)">{{
             item.key
-          }}</mat-option>
+          }}</option>
         </div>
-      </mat-select>
+      </select>
     </div>
     <div *ngIf="isIncomeTypeDic">
       <mat-select>
