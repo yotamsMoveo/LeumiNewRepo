@@ -1,0 +1,103 @@
+.explanation-page-layout {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  direction: rtl;
+}
+.explanation-page-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 16px;
+  margin-bottom: 10px; */
+  margin: 20px
+}
+.explanation-page-title-main {
+  font-family: "SimplerPro_Leumi_H";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+.explanation-page-title-sec {
+  font-family: "SimplerPro_Leumi_H";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  margin-top: 5px;
+}
+
+.explanation-page-body {
+  display: flex;
+  width: 80%;
+  align-self: center;
+  height: 550px;
+}
+
+.section-title {
+  font-family: "SimplerPro_Leumi_H";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  max-width: 127px;
+  color: #000000;
+  padding-top: 10px;
+  max-width: 140px;
+}
+.explanation-page-body-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.explanation-page-body-middle {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  padding: 5px;
+}
+.level-arr {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-top: 30px;
+}
+.level-warpper {
+  display: flex;
+  direction: rtl;
+  padding: 15px;
+}
+.explanation-page-body-left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+}
+.explanation-page-body-text-and-icon {
+  display: flex;
+  direction: rtl;
+}
+
+.explanation-page-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}

@@ -1,0 +1,35 @@
+.requests-file {
+  direction: rtl;
+  margin: 0px 127px 0px 127px;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100%;
+}
+
+.requests-file-button-warpper{
+  
+  padding: 20px;
+  color: white;
+}
+
+.spinner {
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.requests-file-table-and-button-warpper{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.requests-file-table-warpper{
+  margin-bottom: 20%;
+}

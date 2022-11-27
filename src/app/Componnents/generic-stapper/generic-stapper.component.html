@@ -1,0 +1,31 @@
+<div class="generic-stapper">
+  <mat-stepper orientation="vertical" dir="rtl" >
+    <mat-step>
+      <ng-template matStepLabel>רונה כהן</ng-template>
+      <app-nasted-stapper></app-nasted-stapper>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>בן/בת זוג</ng-template>
+      <ng-template matStepContent>
+        <p>This content was also rendered lazily</p>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </ng-template>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>הכנסות והתחייבות</ng-template>
+      <p>This content was rendered eagerly</p>
+      <button mat-button matStepperPrevious>Back</button>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>פרטי הנכס</ng-template>
+      <p>This content was rendered eagerly</p>
+      <button mat-button matStepperPrevious>Back</button>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>העדפות משכנתה</ng-template>
+      <p>This content was rendered eagerly</p>
+      <button mat-button matStepperPrevious>Back</button>
+    </mat-step>
+  </mat-stepper>
+</div>

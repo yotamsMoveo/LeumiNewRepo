@@ -1,0 +1,29 @@
+<div class="requests-file">
+  <app-page-title
+    mainTitle="הבקשות שלי"
+    subTitle="בחרו בקשה על מנת לערוך, לצפות או לעדכן נתונים"
+  ></app-page-title>
+  <div style="padding-top: 85px;">
+    <div class="requests-file-table-and-button-warpper">
+      <div class="requests-file-table-warpper">
+        <app-requests-table class="requests-file-table"></app-requests-table>
+      </div>
+      <nav dir="ltr">
+        <div class="requests-file-button-warpper">
+          <app-button
+            (btnClick)="navigateToFirst()"
+            text="הוספת בקשה"
+            [isDisabled]="false"
+            icon="../../../assets/Images/akar-icons_plus.svg"
+            styleB="add-new-requste"
+          ></app-button>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="spinner">
+    <mat-spinner mode="indeterminate" *ngIf="nextPage"></mat-spinner>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

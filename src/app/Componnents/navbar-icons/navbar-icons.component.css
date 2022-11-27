@@ -1,0 +1,10 @@
+.navbar-icon-list {
+    display: flex;
+    justify-content: space-between;
+  }
+  .navbar-icon {
+    border: 0ch;
+    display: flex;
+    background-color: inherit;
+    align-self: center;
+  }

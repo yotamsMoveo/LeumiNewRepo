@@ -1,0 +1,38 @@
+.requests-file-header {
+    margin-bottom: 41px;
+    margin-top: 40px;
+  }
+  
+  .main-title {
+    width: 500px;
+    /* height: 57px; */
+    /* left: 973px;
+    top: 110px; */
+    font-family: "SimplerPro_Leumi_H";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    /* line-height: 23px; */
+    /* or 77% */
+  
+    display: flex;
+    align-items: center;
+    text-align: right;
+  
+    color: #000000;
+  }
+
+  .sub-title{
+    font-family: 'SimplerPro_Leumi_H';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    /* or 115% */
+    
+    display: flex;
+    align-items: center;
+    text-align: right;
+    
+    color: #000000;
+  }

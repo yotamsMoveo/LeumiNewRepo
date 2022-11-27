@@ -1,0 +1,110 @@
+<div class="Commitments-page">
+  <app-sidenav></app-sidenav>
+  <div class="Commitments-page-content">
+    <div dir="rtl" class="first-page-header">
+      <app-page-title
+        mainTitle="התחייבויות"
+        subTitle="מדובר בהתחייבויות של כל השותפים בעסקה, אותם נתונים כפי שהזנת קודם, ניתן לערוך במידה ומשהו השתנה"
+      ></app-page-title>
+    </div>
+    <div class="the-main-warpper">
+      <form class="incomeAmount-style">
+        <div class="input-warpper" dir="rtl">
+          <label class="form-label">האם יש לך התחייבויות מעל 18 חודשים? </label>
+          <div class="yes-no-buttons">
+            <app-button
+              (btnClick)="setHasMoreCommitments(true)"
+              text="כן"
+              [isDisabled]="false"
+              icon=""
+              styleB="yes-no-button"
+            ></app-button>
+
+            <app-button
+              (btnClick)="setHasMoreCommitments(false)"
+              text="לא"
+              [isDisabled]="false"
+              icon=""
+              styleB="yes-no-button"
+            ></app-button>
+          </div>
+        </div>
+      </form>
+      <form [formGroup]="moreIncomesForm" class="incomes-fg">
+        <div class="form-group-warpper" dir="rtl">
+          <label class="form-label"
+            >התחייבויות מעל 18 חודשים לכל משק הבית</label
+          >
+          <div
+            class="form-group"
+            *ngFor="let commitment of commitments; let i = index"
+          >
+            <app-form-drop-down
+              text="סוג התחייבות"
+              [(formStringValue)]="groupOfThreeCommitments[i].commitmentType"
+              banksDic="banksDic"
+            ></app-form-drop-down>
+            <app-form-text
+              text="סכום ההתחייבויות החודשי"
+              [(value)]="groupOfThreeCommitments[i].commitmentAmount"
+            ></app-form-text>
+
+            <div class="has-another-deal-warper">
+              <div class="has-another-deal-checkbox-warper">
+                <p style="width: max-content">מקור ההתחייבות</p>
+                <div class="has-another-deal-checkbox">
+                  <input
+                    type="radio"
+                    name="radio{{i}}"
+                    (click)="setCommitmentSource('bank',i)"
+                  />
+                  <span class="checkmark"></span>
+                  <label class="container">בנק</label>
+                  <input
+                    type="radio"
+                    name="radio{{i}}"
+                    (click)="setCommitmentSource('notBank',i)"
+                  />
+                  <span class="checkmark"></span>
+                  <label class="container">חוץ בנקאי</label>
+                </div>
+              </div>
+            </div>
+            <img
+              src="../../../../assets/Images/trash.svg"
+              (click)="deleteSpacificCommitment(i)"
+            />
+          </div>
+        </div>
+      </form>
+      <div class="another-income-added">
+        <img
+          src="../../../../assets/Images/add-income.svg"
+          (click)="addAnotherCommitment()"
+          alt=""
+        />
+        <p>הוספת סוג הכנסה נוסף</p>
+      </div>
+    </div>
+    <div class="move-to-buttons">
+      <app-button
+        (btnClick)="navigate('prev')"
+        text="חזרה"
+        [isDisabled]="false"
+        icon="../../assets/Images/right.svg"
+        styleB="backword-button"
+      ></app-button>
+
+      <app-button
+        (btnClick)="navigate('next')"
+        text="המשך לפרטים נוספים של תמיר"
+        [isDisabled]="false"
+        icon="../../assets/Images/left.svg"
+        styleB="forword-button"
+      ></app-button>
+    </div>
+  </div>
+  <div class="spinner">
+    <mat-spinner mode="indeterminate" *ngIf="nextPage"></mat-spinner>
+  </div>
+</div>

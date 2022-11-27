@@ -1,0 +1,138 @@
+<div class="secound-nego-page">
+  <app-sidenav></app-sidenav>
+  <div class="secound-page-content">
+    <div dir="rtl" class="secound-page-header">
+      <app-page-title
+        mainTitle="רונה | פרטים נוספים"
+        subTitle="שאלות נוספות על מנת להכיר אותך קצת יותר טוב"
+      ></app-page-title>
+      <app-button
+        (btnClick)="addAnotherPartner()"
+        text="הוספת שותף/ה לעסקה"
+        [isDisabled]="false"
+        icon=""
+        styleB="form-dropp-dwon"
+      ></app-button>
+    </div>
+    <div>
+      <form [formGroup]="firstLayer" class="secound-page-fg">
+        <!-- first row of the page -->
+        <div class="secound-page-first-row">
+          <app-form-drop-down
+            text="מה הסטטוס המשפחתי שלך?"
+            comment=" לתשומת לבך, בהמשך התהליך נוודא שהמצב המשפחתי שלך תואם את הרשום
+          בתעודת הזהות"
+            [(formBooleanValue)]="isMerridValue"
+            familyStatusDic="FamilyStatusDic"
+          ></app-form-drop-down>
+          <div class="input-warpper" dir="rtl">
+            <label class="form-label"
+              >כמה נפשות יש במשפחה ? לא בולל ילדים מעל גיל 18</label
+            >
+            <form
+              appearance="fill"
+              for="numberOfKids"
+              class="form-plus-minus-buttons-warpper"
+            >
+              <div class="plus-minus-buttons-warpper">
+                <button
+                  mat-button
+                  class="plus-minus-buttons"
+                  (click)="setNumberOfKids('plus')"
+                >
+                  <mat-icon>add</mat-icon>
+                </button>
+                <div>{{ num }}</div>
+                <button
+                  mat-button
+                  class="plus-minus-buttons"
+                  (click)="setNumberOfKids('minus')"
+                >
+                  <mat-icon>remove</mat-icon>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- rest of the page -->
+        <div class="secound-page-secound-row">
+          <div class="input-warpper" dir="rtl">
+            <label class="form-label"
+              >האם הינך מבצע תשלום מס במקום אחר מלבד ישראל?</label
+            >
+            <div class="yes-no-buttons">
+              <app-button
+                (btnClick)="setIsPayAway(true)"
+                text="כן"
+                [isDisabled]="false"
+                icon=""
+                styleB="yes-no-button"
+              ></app-button>
+
+              <app-button
+                (btnClick)="setIsPayAway(false)"
+                text="לא"
+                [isDisabled]="false"
+                icon=""
+                styleB="yes-no-button"
+              ></app-button>
+            </div>
+          </div>
+          <div class="input-warpper" dir="rtl" *ngIf="isPayAway">
+            <app-form-drop-down
+              text="באיזו מדינה?"
+              [(formStringValue)]="payAwayCountry"
+              countriesDic="countriesDic"
+            ></app-form-drop-down>
+          </div>
+        </div>
+        <div class="secound-page-third-row">
+          <div class="input-warpper" dir="rtl">
+            <label class="form-label"
+              >האם אתה או קרוב משפחה שלך מדרגה ראשונה הוא איש ציבור?</label
+            >
+            <div class="yes-no-buttons">
+              <app-button
+                (btnClick)="setIsPayAway(true)"
+                text="כן"
+                [isDisabled]="false"
+                icon=""
+                styleB="yes-no-button"
+              ></app-button>
+              <app-button
+                (btnClick)="setIsPayAway(false)"
+                text="לא"
+                [isDisabled]="false"
+                icon=""
+                styleB="yes-no-button"
+              ></app-button>
+            </div>
+            <app-generic-commant
+              text="איש ציבור מוגדר כראש עיר, שופט, חבר כנסת, חבר ממשלה, שגריר, חבר מפלגה בכיר, קצין צבא או משטרה בכיר (תת אלוף או תת ניצב ומעלה), מנהל בכיר בחברה ממשלתית."
+            ></app-generic-commant>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="move-to-buttons">
+      <app-button
+        (btnClick)="navigate('prev')"
+        text="חזרה"
+        [isDisabled]="false"
+        icon="../../assets/Images/right.svg"
+        styleB="backword-button"
+      ></app-button>
+
+      <app-button
+        (btnClick)="navigate('next')"
+        text="המשך לפרטים נוספים של תמיר"
+        [isDisabled]="false"
+        icon="../../assets/Images/left.svg"
+        styleB="forword-button"
+      ></app-button>
+    </div>
+  </div>
+  <div class="spinner">
+    <mat-spinner mode="indeterminate" *ngIf="nextPage"></mat-spinner>
+  </div>
+</div>

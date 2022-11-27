@@ -1,0 +1,26 @@
+<mat-card  class="sidenav-card-slider" dir="rtl">
+  <p>#הצעה ראשונה</p>
+  <div
+    class="example-label-container"
+  >
+    <label class="example-value-label">{{ this.progressValue }}%</label>
+    <mat-slider
+      class="example-margin"
+      [disabled]="disabled"
+      [invert]="invert"
+      [max]="max"
+      [min]="min"
+      [step]="step"
+      [thumbLabel]="thumbLabel"
+      [tickInterval]="getSliderTickInterval()"
+      [(ngModel)]="progressValue"
+      [vertical]="vertical"
+      aria-labelledby="example-name-label"
+      dir="rtl"
+    >
+      <label class="example-value-label">{{ value }}%</label>
+    </mat-slider>
+  </div>
+</mat-card >
+
+<!-- [class]="vertical ? 'example-label-vertical' : 'example-label-horizontal'" -->

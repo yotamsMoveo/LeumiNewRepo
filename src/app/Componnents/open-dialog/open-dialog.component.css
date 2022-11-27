@@ -1,0 +1,54 @@
+.open-dialog-main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 702px;
+  height: 232px;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.open-dialog-title {
+  font-family: "SimplerPro_Leumi_H";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 23px;
+  /* or 77% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+
+.open-dialog-text {
+  font-family: "SimplerPro_Leumi_H";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  max-width: 474px;
+  color: #000000;
+}
+
+.open-dialog-button {
+  width: 118px;
+  height: 50px;
+  background: #303030;
+  border-radius: 10px;
+  font-family: "SimplerPro_Leumi_H";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  /* or 115% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #ffffff;
+}

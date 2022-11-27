@@ -1,0 +1,104 @@
+<div class="first-nego-page">
+  <app-sidenav></app-sidenav>
+  <div class="first-page-content">
+    <div dir="rtl" class="first-page-header">
+      <app-page-title
+        mainTitle="רונה | פרטים אישיים"
+        subTitle="כבר מילאת את הפרטים האלו, ניתן לערוך במקרה ומשהו השתנה"
+      ></app-page-title>
+      <app-button
+        (btnClick)="addAnotherPartner()"
+        text="+ הוספת שותף/ה לעסקה"
+        [isDisabled]="false"
+        icon=""
+        styleB="add-another-partner"
+      ></app-button>
+    </div>
+
+    <div>
+      <form [formGroup]="profileForm" class="first-page-fg">
+        <app-form-text
+          text="שם פרטי"
+          [(value)]="defultFirstName"
+        ></app-form-text>
+        <app-form-text
+          text="שם משפחה"
+          [(value)]="defultLastName"
+        ></app-form-text>
+        <app-form-text
+          text="מספר טלפון"
+          [(value)]="defultPhoneNumber"
+        ></app-form-text>
+        <app-form-text
+          type="email"
+          text="Email"
+          [(value)]="defuitEmail"
+        ></app-form-text>
+        <!-- <app-form-text
+          type="date"
+          text="תאריך לידה"
+          
+        ></app-form-text> -->
+
+        <!-- <div class="input-warpper" dir="rtl">
+          <mat-label>Email</mat-label>
+          <mat-form-field appearance="fill">
+            <input
+              matInput
+              placeholder="pat@example.com"
+              for="email"
+              required
+            />
+          </mat-form-field>
+          <input type="email" id="email" name="email" class="">
+        </div> -->
+        <app-form-text text="תעודת זהות" [(value)]="defultId"></app-form-text>
+        <div class="date-input-warpper">
+          <label class="form-label"
+          >תאריך לידה</label
+        ><br />
+          <input
+            type="date"
+            class="start"
+            name="trip-start"
+            value="{{ defultDate }}"
+            min="2018-01-01"
+            max="2018-12-31"
+          />
+        </div>
+        <!-- <div class="input-warpper" dir="rtl">
+          <mat-label>תאריך לידה</mat-label>
+          <mat-form-field appearance="fill">
+            <input matInput [matDatepicker]="picker" />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div> -->
+      </form>
+    </div>
+    <div class="move-to-buttons">
+      <app-button
+        (btnClick)="navigate('prev')"
+        text="חזרה"
+        [isDisabled]="false"
+        icon="../../assets/Images/right.svg"
+        styleB="backword-button"
+      ></app-button>
+
+      <app-button
+        (btnClick)="navigate('next')"
+        text="המשך לפרטים נוספים של תמיר"
+        [isDisabled]="false"
+        icon="../../assets/Images/left.svg"
+        styleB="forword-button"
+      ></app-button>
+    </div>
+  </div>
+  <div class="spinner">
+    <mat-spinner mode="indeterminate" *ngIf="nextPage"></mat-spinner>
+  </div>
+</div>

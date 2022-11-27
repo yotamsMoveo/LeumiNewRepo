@@ -1,0 +1,18 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" class="sidenav-opener" dir="ltr">
+    <button (click)="sidenav.toggle()" mat-raised-button>
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+    <app-progres-slider></app-progres-slider>
+    <div class="generic-staper-warpper" dir="rtl">
+      <label dir="rtl">קבלת אישור עקרוני</label>
+      <app-generic-stapper></app-generic-stapper>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="sidenav-content">
+    <button type="button" mat-button (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!showFiller">keyboard_arrow_left</mat-icon>
+    </button>
+  </mat-sidenav-content>
+</mat-sidenav-container>

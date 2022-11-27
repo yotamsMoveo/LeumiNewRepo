@@ -1,0 +1,52 @@
+<div class="input-warpper" dir="rtl">
+  <label *ngIf="labelText" class="form-label">{{ labelText }}</label>
+  <form appearance="fill" class="form-dropp-dwon" for="control">
+    <div *ngIf="isFamilyStatusDic">
+      <mat-select>
+        <div *ngFor="let item of FSDic | keyvalue">
+          <mat-option value="item.value" (click)="setForm(item.value)">{{
+            item.key
+          }}</mat-option>
+        </div>
+      </mat-select>
+    </div>
+    <div *ngIf="isIncomeTypeDic">
+      <mat-select>
+        <div *ngFor="let item of IncomeTypeDic | keyvalue">
+          <mat-option value="item.value" (click)="setForm(item.value)">{{
+            item.key
+          }}</mat-option>
+        </div>
+      </mat-select>
+    </div>
+    <div *ngIf="isCountriesDic">
+      <mat-select>
+        <div *ngFor="let item of countriesList | keyvalue">
+          <mat-option value="item.value" (click)="setForm(item.value)">{{
+            item.key
+          }}</mat-option>
+        </div>
+      </mat-select>
+    </div>
+    <div *ngIf="isWorkStatusDic">
+      <mat-select>
+        <div *ngFor="let item of WorkStatusDic | keyvalue">
+          <mat-option value="item.value" (click)="setForm(item.value)">{{
+            item.key
+          }}</mat-option>
+        </div>
+      </mat-select>
+    </div>
+    <div *ngIf="isBanksDic">
+      <mat-select>
+        <div *ngFor="let item of BanksDic | keyvalue">
+          <mat-option value="item.value" (click)="setForm(item.value)">{{
+            item.key
+          }}</mat-option>
+        </div>
+      </mat-select>
+    </div>
+  </form>
+
+  <app-generic-commant text="{{ commentText }}"></app-generic-commant>
+</div>

@@ -1,0 +1,127 @@
+<!-- 
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table" dir="rtl">
+
+    <ng-container matColumnDef="שם בקשה">
+      <th mat-header-cell *matHeaderCellDef>שם בקשה</th>
+      <td mat-cell *matCellDef="let element">{{element.nameReq}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="סוג עסקה">
+      <th mat-header-cell *matHeaderCellDef>סוג עסקה</th>
+      <td mat-cell *matCellDef="let element">{{element.typeReq}}</td>
+    </ng-container>
+  
+  
+    <ng-container matColumnDef="מיקום בית">
+      <th mat-header-cell *matHeaderCellDef>מיקום בית</th>
+      <td mat-cell *matCellDef="let element">{{element.houseLocation}}</td>
+    </ng-container>
+  
+  
+    <ng-container matColumnDef="תאריך יצירה">
+      <th mat-header-cell *matHeaderCellDef>תאריך יצירה</th>
+      <td mat-cell *matCellDef="let element">{{element.reqDate}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="השינוי האחרון">
+        <th mat-header-cell *matHeaderCellDef>השינוי האחרון</th>
+        <td mat-cell *matCellDef="let element">{{element.lastChange}}</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="סטטוס בקשה">
+        <th mat-header-cell *matHeaderCellDef >סטטוס בקשה</th>
+        <td mat-cell *matCellDef="let element">{{element.reqStatus}}</td>
+      </ng-container>
+      
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="headers-culms"></tr>
+    <tr
+        mat-row
+        (click)="clickedRows.add(row)"
+        [class.demo-row-is-clicked]="clickedRows.has(row)"
+        *matRowDef="let row; columns: displayedColumns;"
+    ></tr>
+  </table>
+  
+
+   -->
+<!-- 
+   <table>
+    <tr>
+      <td>שם הבקשה</td>
+      <td>סוג העסקה</td>
+      <td>מיקום הבית</td>
+      <td>רוכשי הבית</td>
+      <td>תאריך יצירה</td>
+      <td>השינוי האחרון</td>
+      <td>סטטוס הבקשה</td>
+    </tr>
+    <tr>
+      <td>Breed</td>
+      <td>Jack Russell</td>
+      <td>Poodle</td>
+      <td>Streetdog</td>
+      <td>Cocker Spaniel</td>
+    </tr>
+    <tr>
+      <td>Age</td>
+      <td>16</td>
+      <td>9</td>
+      <td>10</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Owner</td>
+      <td>Mother-in-law</td>
+      <td>Me</td>
+      <td>Me</td>
+      <td>Sister-in-law</td>
+    </tr>
+    <tr>
+      <td>Eating Habits</td>
+      <td>Eats everyone's leftovers</td>
+      <td>Nibbles at food</td>
+      <td>Hearty eater</td>
+      <td>Will eat till he explodes</td>
+    </tr>
+  </table> -->
+
+<table
+  style="
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+  "
+>
+  <thead>
+    <tr
+      style="background: #f7f7fe; height: 80px; justify-content: space-between"
+    >
+      <th>שם הבקשה</th>
+      <th>סוג העסקה</th>
+      <th>מיקום הבית</th>
+      <th>רוכשי הבית</th>
+      <th>תאריך יצירה</th>
+      <th>השינוי האחרון</th>
+      <th>סטטוס הבקשה</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of dataSource">
+      <td>{{ data.nameReq }}</td>
+      <td>{{ data.typeReq }}</td>
+      <td>{{ data.houseLocation }}</td>
+      <td>{{ data.houseOwners }}</td>
+      <td>{{ data.reqDate }}</td>
+      <td>{{ data.lastChange }}</td>
+      <td>
+        <div
+        class="req-status"
+        >
+          {{ data.reqStatus }}
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

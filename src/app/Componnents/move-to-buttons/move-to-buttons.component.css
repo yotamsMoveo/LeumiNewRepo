@@ -1,0 +1,11 @@
+.move-to-buttons {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 127px;
+    width: 80%;
+  
+  }
+
+
+  

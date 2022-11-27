@@ -1,0 +1,57 @@
+<div class="morgage-preferences-page">
+  <app-sidenav></app-sidenav>
+  <div class="morgage-preferences-page-content">
+    <div dir="rtl" class="first-page-header">
+      <app-page-title
+        mainTitle="העדפות משכנתה"
+        subTitle="על מנת שנוכל להציע לך את ההצעה המדויקת ביותר עבורך חשוב לנו להכיר את ההעדפות שלך"
+      ></app-page-title>
+      <div class="morgage-preferences-first-layer">
+        <app-form-text
+          comment="סכום המשכנתה יכול להגיע עד ל-75% מסכום הדירה"
+          text="כמה עולה הבית הנרכש?"
+          [(value)]="defultMorgageValue"
+        ></app-form-text>
+        <section class="example-section">
+          <label class="example-margin">{{ defultMorgageValue }}</label>
+          <div class="slider-warpper">
+            <mat-slider class="example-margin" [(ngModel)]="value"></mat-slider>
+          </div>
+        </section>
+      </div>
+      <div class="morgage-preferences-secound-layer">
+        <app-form-text
+          text="איזה סכום יהיה נח לך להחזיר כל חודש?"
+          [(value)]="defultPayBackValue"
+          comment="ככל שזמן ההלוואה עולה כך סכום ההחזר לתשלום יורד"
+        ></app-form-text>
+        <section class="example-section">
+          <label class="example-margin">{{ defultPayBackValue }}</label>
+          <div class="slider-warpper">
+            <mat-slider class="example-margin" [(ngModel)]="value"></mat-slider>
+          </div>
+        </section>
+      </div>
+      <app-generic-commant text="53% אנשים עם פרופיל דומה לך מחזירים כ-7,300 בחודש"></app-generic-commant>
+      <div>
+        <div class="move-to-buttons">
+          <app-button
+            (btnClick)="navigate('prev')"
+            text="חזרה"
+            [isDisabled]="false"
+            icon="../../assets/Images/right.svg"
+            styleB="backword-button"
+          ></app-button>
+
+          <app-button
+            (btnClick)="navigate('next')"
+            text="המשך"
+            [isDisabled]="false"
+            icon="../../assets/Images/left.svg"
+            styleB="forword-button"
+          ></app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

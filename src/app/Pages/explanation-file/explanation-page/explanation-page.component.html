@@ -1,0 +1,94 @@
+<div class="explanation-page-layout">
+  <div class="explanation-page-title">
+    <div class="explanation-page-title-main">ממשיכים לענות על השאלון</div>
+    <div class="explanation-page-title-sec">
+      הנה השלבים הבאים בתהליך על מנת שתוכלו לקבל את האישור העקרוני
+    </div>
+  </div>
+  <div class="explanation-page-body">
+    <div class="explanation-page-body-right">
+      <div class="section-title">בוצע!</div>
+      <img
+        src="../../../../assets/Images/green-light.svg"
+        style="width: 25.41px; height: 25.41px; margin: 10px"
+      />
+      <div class="explanation-page-body-text-and-icon">
+        <div
+          style="
+            max-width: 140px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 24px;
+            text-align: center;
+          "
+        >
+          קבלת אור ירוק לעסקה
+        </div>
+      </div>
+    </div>
+    <img
+      src="../../../../assets/Images/shift-left-icon.svg"
+      alt=""
+      style="
+        width: 9px;
+        height: 19px;
+        margin-top: 8vh;
+        margin-left: 2vh;
+        right: 100%;
+      "
+    />
+    <div class="explanation-page-body-middle">
+      <div class="section-title">לאן נמשיך עכשיו?</div>
+      <img
+        src="../../../../assets/Images/nego-icon.svg"
+        style="width: 25.41px; height: 25.41px; margin: 10px"
+      />
+      <div class="section-title">קבלת אישור עקרוני ותמהיל</div>
+      <div class="level-arr">
+        <div class="level-warpper" *ngFor="let level of levelArr">
+          <img
+            src="../../../../assets/Images/point.svg"
+            style="padding-left: 11px"
+          />
+          <div>{{ level }}</div>
+        </div>
+      </div>
+    </div>
+    <img
+      src="../../../../assets/Images/shift-left-icon.svg"
+      alt=""
+      style="width: 9px; height: 19px; margin-top: 8vh; margin-right: 2vh"
+    />
+    <div class="explanation-page-body-left">
+      <div class="section-title">אחרי זה</div>
+      <img
+        src="../../../../assets/Images/approval-icon.svg"
+        style="width: 25.41px; height: 25.41px; margin: 10px"
+      />
+      <div class="explanation-page-body-text-and-icon">
+        <div
+          style="
+            max-width: 140px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 24px;
+            text-align: center;
+          "
+        >
+          השלמת העסקה וקבלת המשכנתה
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="explanation-page-button">
+    <app-button
+      (btnClick)="navigate('next')"
+      text="המשך למילוי השאלון"
+      [isDisabled]="false"
+      icon="../../assets/Images/left.svg"
+      styleB="forword-button"
+    ></app-button>
+  </div>
+</div>

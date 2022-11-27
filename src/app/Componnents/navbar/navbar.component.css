@@ -1,0 +1,21 @@
+.navbar {
+  direction: rtl;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: white; */
+  background: #F7F7FE;
+  border-bottom: 1px solid #D8DFE7;
+}
+
+
+
+.navbar-left {
+  display: flex;
+  
+}
+
+
+.vl {
+  border-left: 3px solid black;
+  height: 100%;
+}

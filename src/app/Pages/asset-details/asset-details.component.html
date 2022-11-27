@@ -1,0 +1,84 @@
+<div class="assets-details-page">
+  <app-sidenav></app-sidenav>
+  <div class="assets-details-page-content">
+    <div dir="rtl" class="first-page-header">
+      <app-page-title
+        mainTitle="פרטי הנכס"
+        subTitle="אותם פרטים כפי שהזנת קודם, ניתן לערוך במידה ומשהו השתנה"
+      ></app-page-title>
+      <div>
+        <form [formGroup]="assestFormGroup" class="first-page-fg">
+          <app-form-drop-down
+            text="מה מטרת המשכנתה?"
+            [(formStringValue)]="defultMorgageCause"
+            banksDic="banksDic"
+          ></app-form-drop-down>
+          <app-form-text
+            text="לאיזו מטרה תרכוש את הבית?"
+            [(value)]="defultBuyCause"
+          ></app-form-text>
+          <app-form-drop-down
+            text="באיזה עיר או יישוב נמצא הבית הנרכש ?"
+            [(formStringValue)]="defultCity"
+            banksDic="banksDic"
+          ></app-form-drop-down>
+          <app-form-text
+            text="כמה עולה הבית הנרכש?"
+            [(value)]="defultAssetsValue"
+          ></app-form-text>
+        </form>
+        <div class="input-warpper" dir="rtl">
+          <label class="form-label">למתי צריך את הכסף?</label>
+          <div class="yes-no-buttons">
+            <app-button
+              (btnClick)="setWorkTime(1)"
+              text="לחודש הקרוב"
+              [isDisabled]="false"
+              icon=""
+              styleB="yes-no-button"
+            ></app-button>
+            <app-button
+              (btnClick)="setWorkTime(2)"
+              text="ב-3 חודשים הקרובים"
+              [isDisabled]="false"
+              icon=""
+              styleB="yes-no-button"
+            ></app-button>
+            <app-button
+              (btnClick)="setWorkTime(3)"
+              text="מעל 3 חודשים"
+              [isDisabled]="false"
+              icon=""
+              styleB="yes-no-button"
+            ></app-button>
+            <app-button
+              (btnClick)="setWorkTime(3)"
+              text="עדיין לא ידוע"
+              [isDisabled]="false"
+              icon=""
+              styleB="yes-no-button"
+            ></app-button>
+          </div>
+        </div>
+        <div class="move-to-buttons">
+            <app-button
+              (btnClick)="navigate('prev')"
+              text="חזרה"
+              [isDisabled]="false"
+              icon="../../assets/Images/right.svg"
+              styleB="backword-button"
+            ></app-button>
+    
+            <app-button
+              (btnClick)="navigate('next')"
+              text="המשך"
+              [isDisabled]="false"
+              icon="../../assets/Images/left.svg"
+              styleB="forword-button"
+            ></app-button>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>

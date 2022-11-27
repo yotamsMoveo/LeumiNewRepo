@@ -1,0 +1,28 @@
+.form-dropp-dwon {
+  width: 239px;
+  height: 42px;
+  background: #ffffff;
+  border: 1px solid #afafaf;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-warpper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+}
+
+.form-label {
+  width: 100%;
+  font-family: "SimplerPro_Leumi_H";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: right;
+
+  color: #000000;
+}

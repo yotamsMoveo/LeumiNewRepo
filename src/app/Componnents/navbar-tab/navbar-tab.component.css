@@ -1,0 +1,13 @@
+.navbar-tab {
+    border: 0ch;
+    display: flex;
+    background-color: inherit;
+    align-self: center;
+    direction: ltr;
+    align-items: baseline;
+  }
+  .navbar-tab-list {
+    display: flex;
+    background-color: inherit;
+    height: -webkit-fill-available;
+  }

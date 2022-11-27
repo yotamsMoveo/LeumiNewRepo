@@ -1,0 +1,85 @@
+<div class="first-nego-page">
+  <app-sidenav></app-sidenav>
+  <div class="first-page-content">
+    <div dir="rtl" class="first-page-header">
+      <app-page-title
+        mainTitle="בן/בת זוג | פרטים אישיים"
+        subTitle="כבר מילאת את הפרטים האלו, ניתן לערוך במקרה ומשהו השתנה"
+      ></app-page-title>
+      <app-button
+        (btnClick)="addAnotherPartner()"
+        text="הוספת שותף/ה לעסקה"
+        [isDisabled]="false"
+        icon=""
+        styleB="form-dropp-dwon"
+      ></app-button>
+    </div>
+
+    <div>
+      <form [formGroup]="profileForm" class="first-page-fg">
+        <app-form-text
+          text="שם פרטי"
+          [(value)]="defultFirstName"
+        ></app-form-text>
+        <app-form-text
+          text="שם משפחה"
+          [(value)]="defultLastName"
+        ></app-form-text>
+        <app-form-text
+          text="מספר טלפון"
+          [(value)]="defultPhoneNumber"
+        ></app-form-text>
+        <div class="input-warpper" dir="rtl">
+          <mat-label>Email</mat-label>
+          <mat-form-field appearance="fill">
+            <input
+              matInput
+              placeholder="pat@example.com"
+              for="email"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <app-form-text text="תעודת זהות" [(value)]="defultId"></app-form-text>
+        <div class="input-warpper" dir="rtl">
+          <mat-label>תאריך לידה</mat-label>
+          <mat-form-field appearance="fill">
+            <input matInput [matDatepicker]="picker" />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </form>
+    </div>
+    <div class="contractValidate">
+      <mat-checkbox class="example-margin" color="primary"> </mat-checkbox>
+      <p class="contract-comment">{{ contractValidateText }}</p>
+    </div>
+    <p class="contract-comment">{{ contractValidateTextSecound }}</p>
+    <div class="move-to-buttons">
+      <app-button
+        (btnClick)="navigate('prev')"
+        text="חזרה"
+        [isDisabled]="false"
+        icon="../../assets/Images/right.svg"
+        styleB="backword-button"
+      ></app-button>
+
+      <app-button
+        (btnClick)="navigate('next')"
+        text="המשך לפרטים נוספים של תמיר"
+        [isDisabled]="false"
+        icon="../../assets/Images/left.svg"
+        styleB="forword-button"
+      ></app-button>
+    </div>
+    <!-- <app-move-to-buttons></app-move-to-buttons> -->
+  </div>
+  <div class="spinner">
+    <mat-spinner mode="indeterminate" *ngIf="nextPage"></mat-spinner>
+  </div>
+</div>

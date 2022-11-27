@@ -1,0 +1,88 @@
+<div class="incomes-page">
+  <app-sidenav></app-sidenav>
+  <div class="incomes-page-content">
+    <div dir="rtl" class="first-page-header">
+      <app-page-title
+        mainTitle="הכנסות"
+        subTitle="מדובר בהכנסות של כל השותפים בעסקה, אותם נתונים כפי שהזנת קודם, ניתן לערוך במידה ומשהו השתנה"
+      ></app-page-title>
+    </div>
+    <div class="the-main-warpper">
+      <app-form-text
+        text="מה גובה ההכנסות החודשיות (נטו) מעבודה לכל משק הבית?"
+        [(value)]="defultIncome"
+      ></app-form-text>
+
+      <form [formGroup]="moreIncomesForm" class="incomes-fg">
+        <div class="form-group-warpper" dir="rtl">
+          <label class="form-label">הכנסות נוספות</label>
+          <div class="form-group" *ngFor="let income of incomes; let i = index">
+            <app-form-drop-down
+              [(formStringValue)]="groupOfThreeIncomes[i].incomeType"
+              incomeTypeDic="isIncomeTypeDic"
+            ></app-form-drop-down>
+
+            <app-form-drop-down
+              [(formStringValue)]="groupOfThreeIncomes[i].incomeTypeType"
+              incomeTypeDic="isIncomeTypeDic"
+            ></app-form-drop-down>
+
+            <app-form-text [(value)]="groupOfThreeIncomes[i].incomeAmount"></app-form-text>
+            <img
+              src="../../../../assets/Images/trash.svg"
+              (click)="deleteSpacificIncome(i)"
+            />
+          </div>
+        </div>
+      </form>
+      <div class="another-income-added">
+        <img
+          src="../../../../assets/Images/add-income.svg"
+          (click)="addAnotherIncome()"
+          alt=""
+        />
+        <p>הוספת סוג הכנסה נוסף</p>
+      </div>
+      <div class="anothe-acount-field">
+        <form>
+          <app-form-drop-down
+            comment="נדרש לסמן את הבנקים בהם מנוהלים חשבונות עו״ש של כל הלווים בעסקה"
+            text="באילו בנקים יש לך חשבונות עו״ש?"
+            [(formStringValue)]="isBanksDic"
+            banksDic="banksDic"
+          ></app-form-drop-down>
+        </form>
+        <!-- <label class="form-label">באילו בנקים יש לכם חשבונות עו״ש?</label>
+        <form appearance="fill" for="moreBankAcounts" class="form-dropp-dwon">
+          <mat-select>
+            <mat-option value="true">נשוי/נשואה</mat-option>
+            <mat-option value="false">רווק/ה</mat-option>
+          </mat-select>
+        </form>
+        <app-generic-commant
+          text="נדרש לסמן את הבנקים בהם מנוהלים חשבונות עו״ש של כל הלווים בעסקה"
+        ></app-generic-commant> -->
+      </div>
+    </div>
+    <div class="move-to-buttons">
+      <app-button
+        (btnClick)="navigate('prev')"
+        text="חזרה"
+        [isDisabled]="false"
+        icon="../../assets/Images/right.svg"
+        styleB="backword-button"
+      ></app-button>
+
+      <app-button
+        (btnClick)="navigate('next')"
+        text="המשך לפרטים נוספים של תמיר"
+        [isDisabled]="false"
+        icon="../../assets/Images/left.svg"
+        styleB="forword-button"
+      ></app-button>
+    </div>
+  </div>
+  <div class="spinner">
+    <mat-spinner mode="indeterminate" *ngIf="nextPage"></mat-spinner>
+  </div>
+</div>

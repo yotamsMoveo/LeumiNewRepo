@@ -1,0 +1,12 @@
+<form class="form-input-style">
+    <label *ngIf="labelText" class="form-label"
+      >{{labelText}}</label
+    ><br />
+    <input
+      type="text"
+      class="form-text-field"
+      value="{{difultValue}}"
+      (change)="setForm($event)"
+    />
+  </form>
+  <app-generic-commant text="{{commentText}}"></app-generic-commant>
